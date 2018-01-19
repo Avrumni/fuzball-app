@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -9,6 +10,8 @@ import { CreateMatchComponent } from './match/create-match/create-match.componen
 import { CurrentMatchComponent } from './match/current-match/current-match.component';
 import { CreatePlayerComponent } from './player/create-player/create-player.component';
 import {LeaderBoardService} from './leader-board/leader-board.service';
+import {PlayerService} from './player/player.service';
+import {CurrentMatchService} from './match/current-match/current-match.service';
 
 const routes: Routes = [
   {path: '', component: LeaderBoardComponent},
@@ -27,10 +30,13 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+      FormsModule,
     RouterModule.forRoot(routes, {enableTracing: true})
   ],
   providers: [
-      LeaderBoardService
+      LeaderBoardService,
+      PlayerService,
+      CurrentMatchService
   ],
   bootstrap: [AppComponent]
 })

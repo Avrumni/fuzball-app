@@ -1,3 +1,22 @@
-<p>
-  match works!
-</p>
+<h1>
+    <span class="team-a">
+        {{match.teamA.player1.name}}
+        and
+        {{match.teamA.player2.name}}
+    </span>
+    <span class="vs">VS</span>
+    <span class="team-b">
+        {{match.teamB.player1.name}}
+        and
+        {{match.teamB.player2.name}}
+    </span>
+</h1>
+<form name="current-match" (ngSubmit)="onSubmit()">
+    <input type="number"/>
+    <span>:</span>
+    <input type="number"/>
+    <button type="submit">Save</button>
+</form>
+
+<a routerLink="/match/create">Cancel</a>
+<a routerLink="/match/current">Re-start</a>
