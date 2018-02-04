@@ -1,0 +1,12 @@
+@import "../app/leader-board/leader-board.component";
+@import "../app/match/create-match/create-match.component";
+@import "../app/match/current-match/current-match.component";
+@import "../app/player/create-player/create-player.component";
+
+body {
+    background: hotpink;
+
+    table {
+        border: 5px solid crimson;
+    }
+}

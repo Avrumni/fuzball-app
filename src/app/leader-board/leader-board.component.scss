@@ -1,0 +1,38 @@
+table {
+    background: honeydew;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background: crimson;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bolder;
+    width: 50%;
+}
+
+tr {
+    height: 2.6rem;
+}
+
+td {
+    text-align: center;
+    font-family: "Apple SD Gothic Neo";
+}
+
+.start-button {
+    display: block;
+    text-align: center;
+    background: crimson;
+    font-size: 5rem;
+    text-decoration: none;
+    color: #fff;
+    margin: 2rem 0;
+    padding: 1rem 0;
+}
+
+.between-name {
+    font-size: small;
+    font-weight: lighter;
+}

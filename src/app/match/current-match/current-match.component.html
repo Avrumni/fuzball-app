@@ -1,20 +1,22 @@
 <h1>
-    <span class="team-a">
+    <span class="team-yellow">
         {{match.teamA.player1.name}}
         and
         {{match.teamA.player2.name}}
     </span>
     <span class="vs">VS</span>
-    <span class="team-b">
+    <span class="team-red">
         {{match.teamB.player1.name}}
         and
         {{match.teamB.player2.name}}
     </span>
 </h1>
+<h2>Score</h2>
 <form name="current-match" (ngSubmit)="onSubmit()">
-    <input type="number"/>
+    <input name="teamAScore" type="number" [(ngModel)]="match.teamA.score"/>
     <span>:</span>
-    <input type="number"/>
+    <input name="teamBScore" type="number" [(ngModel)]="match.teamB.score"/>
+
     <button type="submit">Save</button>
 </form>
 

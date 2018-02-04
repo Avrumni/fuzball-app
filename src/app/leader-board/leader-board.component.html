@@ -1,12 +1,12 @@
-<a routerLink="/match/create">Start a new match!</a>
-
+<a class="start-button" routerLink="/match/create">Start a new match!</a>
 <table>
     <tr>
         <th>Team</th>
         <th>Win rate</th>
     </tr>
     <tr *ngFor="let rank of rankings">
-        <td>{{rank.player1}} and {{rank.player2}}</td>
+        <td><b>{{rank.player1}}</b> <span class="between-name">and</span> <b>{{rank.player2}}</b></td>
         <td>{{rank.winRate}}%</td>
     </tr>
 </table>
+

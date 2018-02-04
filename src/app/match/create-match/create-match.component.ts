@@ -3,15 +3,16 @@ import {Player} from '../../player/player';
 import {PlayerService} from '../../player/player.service';
 import {Router} from '@angular/router';
 import {CurrentMatchService} from '../current-match/current-match.service';
+import {Match} from "../match";
 
 @Component({
     selector: 'app-create-match',
     templateUrl: './create-match.component.html',
-    styleUrls: ['./create-match.component.css']
+    styleUrls: ['./create-match.component.scss']
 })
 export class CreateMatchComponent implements OnInit {
     public players: Player[] = [];
-    public match = {
+    public match: Match = {
         teamA: {
             player1: null,
             player2: null,

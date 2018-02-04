@@ -1,14 +1,15 @@
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
+import {Match} from "../match";
 
 @Injectable()
 export class CurrentMatchService {
-    private currentMatch = null;
+    private currentMatch: Match = null;
 
     constructor(private router: Router) {
     }
 
-    public get() {
+    public get(): Match {
         if (!this.currentMatch) {
             return null;
         }
@@ -18,7 +19,7 @@ export class CurrentMatchService {
         };
     }
 
-    public set(match) {
+    public set(match: Match) {
         this.currentMatch = match;
     }
 }

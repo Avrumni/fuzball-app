@@ -4,14 +4,12 @@ import {LeaderBoardService} from './leader-board.service';
 @Component({
     selector: 'app-leader-board',
     templateUrl: './leader-board.component.html',
-    styleUrls: ['./leader-board.component.css']
+    styleUrls: ['./leader-board.component.scss']
 })
 export class LeaderBoardComponent implements OnInit {
-    private leaderBoardService: LeaderBoardService;
     public rankings = [];
 
-    constructor(leaderBoardService: LeaderBoardService) {
-        this.leaderBoardService = leaderBoardService;
+    constructor(private leaderBoardService: LeaderBoardService) {
     }
 
     ngOnInit() {
