@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PlayerService} from '../player.service';
 import {Router} from '@angular/router';
+import {Player} from '../player';
 
 @Component({
     selector: 'app-create-player',
@@ -17,7 +18,7 @@ export class CreatePlayerComponent implements OnInit {
     }
 
     onSubmit() {
-        console.log('create player');
+        console.log('create playerNumber');
         this.playerService.savePlayer({name: ''});
         this.router.navigate(['/match/create']);
     }

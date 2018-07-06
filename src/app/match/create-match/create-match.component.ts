@@ -3,7 +3,7 @@ import {Player} from '../../player/player';
 import {PlayerService} from '../../player/player.service';
 import {Router} from '@angular/router';
 import {CurrentMatchService} from '../current-match/current-match.service';
-import {Match} from "../match";
+import {Match} from '../match';
 
 @Component({
     selector: 'app-create-match',
@@ -29,33 +29,31 @@ export class CreateMatchComponent implements OnInit {
         private playerService: PlayerService,
         private currentMatchService: CurrentMatchService,
         private router: Router
-    ) {}
+    ) {
+    }
 
     public ngOnInit() {
-        this.playerService.getAll().then((players) => {
+        this.playerService.getAll().subscribe((players) => {
             this.players = players;
+        }, (e) => {
+            alert('Error getting players: ' + e.message);
         });
     }
 
-    public playerAvailable(player: Player) {
-        if (player === this.match.teamA.player1 ||
+    public getAvaliablePlayers(player: Player): boolean {
+        return !(
+            player === this.match.teamA.player1 ||
             player === this.match.teamA.player2 ||
             player === this.match.teamB.player1 ||
-            player === this.match.teamB.player2) {
-            return false;
-        }
-
-        return true;
+            player === this.match.teamB.player2
+        );
     }
 
     public readyToStart() {
-        if (this.match.teamA.player1 !== null &&
+        return (this.match.teamA.player1 !== null &&
             this.match.teamA.player2 !== null &&
             this.match.teamB.player1 !== null &&
-            this.match.teamB.player2 !== null) {
-            return true;
-        }
-        return false;
+            this.match.teamB.player2 !== null);
     }
 
     public onSubmit() {

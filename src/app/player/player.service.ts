@@ -1,26 +1,18 @@
 import {Injectable} from '@angular/core';
 import {Player} from './player';
+import {HttpClient} from '@angular/common/http';
+import {ApiConstants} from '../common/api.constants';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class PlayerService {
 
-    constructor() {
+    constructor(private httpClient: HttpClient) {
     }
 
-    public getAll(): Promise<Player[]> {
-        return Promise.resolve([{
-            name: 'John Smith'
-        }, {
-            name: 'Jane Smith'
-        }, {
-            name: 'Smith Johnson'
-        }, {
-            name: 'Nick Balsaras'
-        }, {
-            name: 'Benny Ho'
-        }, {
-            name: 'Carol Cheng'
-        }]);
+    public getAll(): Observable<Player[]> {
+        return this.httpClient
+            .get<Player[]>(ApiConstants.PLAYERS);
     }
 
     public savePlayer(player: Player) {
