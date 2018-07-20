@@ -1,9 +1,6 @@
 <h1>Create a match</h1>
 <form name="match" (ngSubmit)="onSubmit()">
     <h2 class="team-yellow">Team Yellow</h2>
-    <!--<app-select-player [playerNumber]="1" [players]="players" [match]="match" [team]="match.teamA"></app-select-player>-->
-    <!--<app-select-player [playerNumber]="2" [players]="players" [match]="match" [team]="match.teamA"></app-select-player>-->
-
     <app-select-player
         [(player)]="match.teamA.player1"
         [players]="players"
@@ -16,6 +13,7 @@
         [isPlayerSelected]="isPlayerSelected">
     </app-select-player>
 
+    <h2 class="team-red">Team Red </h2>
     <app-select-player
         [(player)]="match.teamB.player1"
         [players]="players"
@@ -27,10 +25,6 @@
         [players]="players"
         [isPlayerSelected]="isPlayerSelected">
     </app-select-player>
-
-    <h2 class="team-yellow">Red Yellow</h2>
-    <!--<app-select-player [playerNumber]="1" [players]="players" [match]="match" [team]="match.teamB"></app-select-player>-->
-    <!--<app-select-player [playerNumber]="2" [players]="players" [match]="match" [team]="match.teamB"></app-select-player>-->
 
     <button type="submit" [disabled]="!readyToStart()">Start</button>
 </form>

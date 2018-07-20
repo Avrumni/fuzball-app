@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CurrentMatchService} from './current-match.service';
 import {Router} from '@angular/router';
-import {Match} from "../match";
+import {Match} from '../match';
 
 @Component({
     selector: 'app-match',
@@ -10,6 +10,7 @@ import {Match} from "../match";
 })
 export class CurrentMatchComponent implements OnInit {
     public match: Match;
+    public saving: boolean = false;
 
     constructor(private currentMatchService: CurrentMatchService,
                 private router: Router) {
@@ -17,22 +18,16 @@ export class CurrentMatchComponent implements OnInit {
 
     ngOnInit() {
         this.match = this.currentMatchService.get();
-        console.log(this.match);
+
         if (!this.match) {
             this.router.navigate(['/match/create']);
         }
     }
 
     onSubmit() {
-        console.log('submit');
-        this.router.navigate(['']);
-    }
-
-    onCancel() {
-        this.router.navigate(['/match/create']);
-    }
-
-    onRestart() {
-        this.router.navigate(['/match/current']);
+        this.saving = true;
+        this.currentMatchService.save(this.match).subscribe(() => {
+            this.router.navigate(['']);
+        });
     }
 }

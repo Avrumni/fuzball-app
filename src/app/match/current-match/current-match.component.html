@@ -11,14 +11,15 @@
         {{match.teamB.player2.name}}
     </span>
 </h1>
+
 <h2>Score</h2>
 <form name="current-match" (ngSubmit)="onSubmit()">
-    <input name="teamAScore" type="number" [(ngModel)]="match.teamA.score"/>
+    <input name="teamAScore" type="number" [(ngModel)]="match.teamAScore"/>
     <span>:</span>
-    <input name="teamBScore" type="number" [(ngModel)]="match.teamB.score"/>
+    <input name="teamBScore" type="number" [(ngModel)]="match.teamBScore"/>
+
+    <br />
 
     <button type="submit">Save</button>
+    <a routerLink="/match/create">Cancel</a>
 </form>
-
-<a routerLink="/match/create">Cancel</a>
-<a routerLink="/match/current">Re-start</a>

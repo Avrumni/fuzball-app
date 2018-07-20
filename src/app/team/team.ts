@@ -1,7 +1,6 @@
-import {Player} from "../player/player";
+import {Player} from '../player/player';
 
-export class Team {
+export interface Team {
     player1: Player;
     player2: Player;
-    score: number;
 }

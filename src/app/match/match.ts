@@ -1,6 +1,8 @@
-import {Team} from "../team/team";
+import {Team} from '../team/team';
 
-export class Match {
-    public teamA: Team;
-    public teamB: Team;
+export interface Match {
+    teamA: Team;
+    teamAScore: number;
+    teamB: Team;
+    teamBScore: number;
 }

@@ -15,14 +15,14 @@ export class CreateMatchComponent implements OnInit {
     public match: Match = {
         teamA: {
             player1: null,
-            player2: null,
-            score: 0
+            player2: null
         },
+        teamAScore: 0,
         teamB: {
             player1: null,
-            player2: null,
-            score: 0
-        }
+            player2: null
+        },
+        teamBScore: 0
     };
 
     constructor(
