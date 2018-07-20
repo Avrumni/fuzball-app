@@ -1,10 +1,10 @@
 <!--<label>Player {{playerNumber}}</label>-->
 <!--[(ngModel)]="team['player' + playerNumber]"-->
-<div *ngIf="playerAvailable">
+<div *ngIf="isPlayerSelected">
     <select *ngIf="!newPlayer" [(ngModel)]="player" (change)="onChange()">
         <option></option>
         <option *ngFor="let player of players"
-                [disabled]="playerAvailable.indexOf(player) > -1"
+                [disabled]="isPlayerSelected(player)"
                 [ngValue]="player">{{player.name}}
         </option>
     </select>

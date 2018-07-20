@@ -40,8 +40,8 @@ export class CreateMatchComponent implements OnInit {
         });
     }
 
-    public getAvaliablePlayers(player: Player): boolean {
-        return !(
+    public isPlayerSelected = (player: Player): boolean => {
+        return (
             player === this.match.teamA.player1 ||
             player === this.match.teamA.player2 ||
             player === this.match.teamB.player1 ||

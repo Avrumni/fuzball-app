@@ -7,25 +7,25 @@
     <app-select-player
         [(player)]="match.teamA.player1"
         [players]="players"
-        [playerAvailable]="getAvaliablePlayers">
+        [isPlayerSelected]="isPlayerSelected">
     </app-select-player>
 
     <app-select-player
         [(player)]="match.teamA.player2"
         [players]="players"
-        [playerAvailable]="getAvaliablePlayers">
+        [isPlayerSelected]="isPlayerSelected">
     </app-select-player>
 
     <app-select-player
         [(player)]="match.teamB.player1"
         [players]="players"
-        [playerAvailable]="getAvaliablePlayers">
+        [isPlayerSelected]="isPlayerSelected">
     </app-select-player>
 
     <app-select-player
         [(player)]="match.teamB.player2"
         [players]="players"
-        [playerAvailable]="getAvaliablePlayers">
+        [isPlayerSelected]="isPlayerSelected">
     </app-select-player>
 
     <h2 class="team-yellow">Red Yellow</h2>
