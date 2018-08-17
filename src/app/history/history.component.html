@@ -1,0 +1,16 @@
+<section>
+    <h1>History</h1>
+    <div class="match" *ngFor="let match of matches">
+        <dl>
+            <dt><em>{{match.teamA.player1.name}}</em> and <em>{{match.teamA.player2.name}}</em></dt>
+            <dd>{{match.teamAScore}}</dd>
+        </dl>
+        <span>vs</span>
+        <dl>
+            <dt><em>{{match.teamB.player1.name}}</em> and <em>{{match.teamB.player2.name}}</em></dt>
+            <dd>{{match.teamBScore}}</dd>
+        </dl>
+    </div>
+</section>
+
+<a class="start-button" routerLink="/match/create">Start a new match!</a>

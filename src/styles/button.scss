@@ -1,0 +1,10 @@
+%button {
+    display: inline-block;
+    background: color('primary');
+    color: color('primary', 'inverse');
+    padding: .5rem 1rem;
+    text-decoration: none;
+    border-radius: .2rem;
+    text-align: center;
+    border: none;
+}

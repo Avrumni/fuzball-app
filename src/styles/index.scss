@@ -1,12 +1,30 @@
-@import "../app/leader-board/leader-board.component";
-@import "../app/match/create-match/create-match.component";
-@import "../app/match/current-match/current-match.component";
-@import "../app/player/create-player/create-player.component";
+@import 'color';
+@import 'reset';
+@import 'button';
+
+html {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: color('primary');
+}
 
 body {
-    background: hotpink;
+    background: color('background');
+}
 
-    table {
-        border: 5px solid crimson;
-    }
+h1 {
+    padding: .6rem;
+    background: color('primary');
+    color: color('primary', 'inverse');
+    text-align: center;
+}
+
+h2 {
+    margin: 1rem 0 0.3rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+button {
+    @extend %button;
 }

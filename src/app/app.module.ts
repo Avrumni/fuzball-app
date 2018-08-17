@@ -13,9 +13,11 @@ import {PlayerService} from './player/player.service';
 import {CurrentMatchService} from './match/current-match/current-match.service';
 import { SelectPlayerComponent } from './player/select-player/select-player.component';
 import {HttpClientModule} from '@angular/common/http';
+import {HistoryComponent} from './history/history.component';
+import {MatchService} from './match/match.service';
 
 const routes: Routes = [
-    {path: '', component: LeaderBoardComponent},
+    {path: '', component: HistoryComponent},
     {path: 'match/create', component: CreateMatchComponent},
     {path: 'match/current', component: CurrentMatchComponent},
     {path: 'playerNumber/create', component: CreatePlayerComponent}
@@ -28,7 +30,8 @@ const routes: Routes = [
         CreateMatchComponent,
         CurrentMatchComponent,
         CreatePlayerComponent,
-        SelectPlayerComponent
+        SelectPlayerComponent,
+        HistoryComponent
     ],
     imports: [
         BrowserModule,
@@ -39,7 +42,8 @@ const routes: Routes = [
     providers: [
         LeaderBoardService,
         PlayerService,
-        CurrentMatchService
+        CurrentMatchService,
+        MatchService
     ],
     bootstrap: [AppComponent]
 })

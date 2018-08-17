@@ -1,0 +1,39 @@
+@import '../../styles/color';
+@import '../../styles/button';
+
+.match {
+    border-bottom: 1px solid color('subtle');
+    text-align: center;
+    display: flex;
+    align-items: stretch;
+    padding: .5rem .3rem;
+
+    dl {
+        flex: 1 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        dt {
+            margin-bottom: .5rem;
+        }
+
+        dd {
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+    }
+
+    > span {
+        width: 50px;
+        align-self: center;
+    }
+
+    em {
+        font-weight: bold;
+    }
+}
+
+.start-button {
+    @extend %button;
+}

@@ -1,0 +1,16 @@
+$colors: (
+    'background': (
+        'color': #fff
+    ),
+    'primary': (
+        'color': #303030,
+        'inverse': #fff
+    ),
+    'subtle': (
+        'color': #e5e5e5
+    )
+);
+
+@function color($name, $variant: 'color') {
+    @return map-get(map-get($colors, $name), $variant);
+}
