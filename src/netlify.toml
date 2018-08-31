@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "https://fussball-time.netlify.com/api/*"
+  from = "/api"
   to = "https://fuzzball-time-dev.herokuapp.com/:splat"
   status = 200
   force = true
