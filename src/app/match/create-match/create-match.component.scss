@@ -1,0 +1,6 @@
+@import '../../../styles/footer-button';
+
+.start-button {
+    @extend %footer-button;
+
+}

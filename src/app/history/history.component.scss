@@ -1,5 +1,5 @@
 @import '../../styles/color';
-@import '../../styles/button';
+@import '../../styles/footer-button';
 
 .match {
     border-bottom: 1px solid color('subtle');
@@ -35,5 +35,6 @@
 }
 
 .start-button {
-    @extend %button;
+    @extend %footer-button;
+
 }

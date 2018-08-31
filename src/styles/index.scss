@@ -1,6 +1,7 @@
 @import 'color';
 @import 'reset';
 @import 'button';
+@import 'footer-button';
 
 html {
     font-size: 14px;
@@ -28,3 +29,9 @@ h2 {
 button {
     @extend %button;
 }
+
+footer-button {
+    @extend %footer-button;
+}
+
+
