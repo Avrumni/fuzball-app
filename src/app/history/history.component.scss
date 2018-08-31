@@ -38,3 +38,28 @@
     @extend %footer-button;
 
 }
+
+
+.team-header {
+     display: flex;
+
+
+    .yellow {
+        background-color: #ffe062;
+        font-size: 2em;
+        flex: 1;
+        padding: .5rem .3rem;
+        text-align: left;
+
+    }
+    .red {
+        background-color: #f6546a;
+        flex: 1;
+        font-size: 2em;
+        padding: .5rem .3rem;
+        text-align: right;
+
+    }
+ }
+
+

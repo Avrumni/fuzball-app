@@ -10,6 +10,9 @@
     left: 0;
     font-size: 2.5rem;
     background-color: color('accept');
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25);
-
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+    height: 6rem;
 }
