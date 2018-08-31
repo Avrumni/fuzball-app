@@ -1,3 +1,1 @@
-http://fussball-time.netlify.com/* https://fussball-time.netlify.com/:splat 301!
 /api/*  https://fuzzball-time-dev.herokuapp.com/:splat  200
-/*  /index.html 200
