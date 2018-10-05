@@ -11,5 +11,6 @@ export class MatchService {
 
     public getAll(): Promise<Match[]> {
         return this.httpClient.get<Match[]>(ApiConstants.MATCH).toPromise();
+
     }
 }

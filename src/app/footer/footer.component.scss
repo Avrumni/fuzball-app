@@ -1,8 +1,5 @@
-@import 'button';
-@import 'color';
 
-%footer-button {
-    @extend %button;
+.footer-button {
     grid-area: footer;
     font-size: 2.5rem;
     background-color: color('accept');

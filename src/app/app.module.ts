@@ -9,6 +9,8 @@ import {LeaderBoardService} from './leader-board/leader-board.service';
 import {CreateMatchComponent} from './match/create-match/create-match.component';
 import {CurrentMatchComponent} from './match/current-match/current-match.component';
 import {CreatePlayerComponent} from './player/create-player/create-player.component';
+import {FooterComponent} from './footer/footer.component';
+
 import {PlayerService} from './player/player.service';
 import {CurrentMatchService} from './match/current-match/current-match.service';
 import { SelectPlayerComponent } from './player/select-player/select-player.component';
@@ -30,6 +32,7 @@ const routes: Routes = [
         CreateMatchComponent,
         CurrentMatchComponent,
         CreatePlayerComponent,
+        FooterComponent,
         SelectPlayerComponent,
         HistoryComponent
     ],
