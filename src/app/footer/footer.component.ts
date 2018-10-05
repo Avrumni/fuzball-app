@@ -9,11 +9,16 @@ import {Router} from '@angular/router';
 export class FooterComponent implements OnInit {
 
     @Input()
-    public word = 'sdfdsfdsfsd';
-
+    public word() {
+        switch (this.router.url) {
+            case '/': return 'Start a new match';
+            case '/match/create': return 'Start a new game';
+            default: return 'Hello';
+        }
+    }
 
     constructor(private router: Router) {
-        console.log('loaded');
+        console.log(this.router.url);
     }
 
     ngOnInit() {
