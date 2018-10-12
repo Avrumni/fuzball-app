@@ -1,6 +1,6 @@
 <header>
-    <a class="navbar-item" *ngIf="router.url != '/'" (click)="backClicked()" >GET BACK</a>
-    <span></span>
+    <!--<a class="navbar-left" *ngIf="router.url != '/'" (click)="backClicked()" >GET BACK</a>-->
+    <a class="navbar-left" (click)="backClicked()" ><i class="fas fa-arrow-left"></i></a>
     <img src="/assets/fussballTime.svg"/>
-    <a (click)="backClicked()" >ADD A NEW PLAYER</a>
+    <a class="navbar-right" (click)="addNewPlayer()" ><i class="fas fa-user-plus"></i></a>
 </header>

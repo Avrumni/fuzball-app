@@ -19,4 +19,7 @@ export class HeaderComponent implements OnInit {
     backClicked() {
         this._location.back();
     }
+    addNewPlayer() {
+        console.log("Added new player");
+    }
 }
