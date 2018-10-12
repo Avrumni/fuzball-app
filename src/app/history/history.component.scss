@@ -1,5 +1,4 @@
 @import '../../styles/color';
-@import '../../styles/footer-button';
 
 .match {
     border-bottom: 1px solid color('subtle');
@@ -34,15 +33,10 @@
     }
 }
 
-.start-button {
-    @extend %footer-button;
-
-}
-
 
 .team-header {
-     display: flex;
-
+    display: flex;
+    font-family: Bangers, Arial, Helvetica, sans-serif;
 
     .yellow {
         background-color: #ffe062;

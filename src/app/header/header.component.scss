@@ -1,0 +1,17 @@
+
+header {
+    background: black;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    a {
+        color: white;
+        cursor: pointer;
+    }
+    span {
+        display: block;
+        background: url('/assets/fussballTime.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}

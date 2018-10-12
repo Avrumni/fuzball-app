@@ -1,30 +1,33 @@
-<h1>Create a match</h1>
-<form class='wrapper' name="match" (ngSubmit)="onSubmit()">
-    <h2 class="team-yellow">Team Yellow</h2>
-    <app-select-player
-        [(player)]="match.teamA.player1"
-        [players]="players"
-        [isPlayerSelected]="isPlayerSelected">
-    </app-select-player>
 
-    <app-select-player
-        [(player)]="match.teamA.player2"
-        [players]="players"
-        [isPlayerSelected]="isPlayerSelected">
-    </app-select-player>
+<div class="create-match-container">
+    <h1>Create a match</h1>
+    <form name="match" (ngSubmit)="onSubmit()">
+        <h2 class="team-yellow">Team Yellow</h2>
+        <app-select-player
+            [(player)]="match.teamA.player1"
+            [players]="players"
+            [isPlayerSelected]="isPlayerSelected">
+        </app-select-player>
 
-    <h2 class="team-red">Team Red </h2>
-    <app-select-player
-        [(player)]="match.teamB.player1"
-        [players]="players"
-        [isPlayerSelected]="isPlayerSelected">
-    </app-select-player>
+        <app-select-player
+            [(player)]="match.teamA.player2"
+            [players]="players"
+            [isPlayerSelected]="isPlayerSelected">
+        </app-select-player>
 
-    <app-select-player
-        [(player)]="match.teamB.player2"
-        [players]="players"
-        [isPlayerSelected]="isPlayerSelected">
-    </app-select-player>
+        <h2 class="team-red">Team Red </h2>
+        <app-select-player
+            [(player)]="match.teamB.player1"
+            [players]="players"
+            [isPlayerSelected]="isPlayerSelected">
+        </app-select-player>
 
-    <!--<button class="start-button" type="submit" [disabled]="!readyToStart()">Start</button>-->
-</form>
+        <app-select-player
+            [(player)]="match.teamB.player2"
+            [players]="players"
+            [isPlayerSelected]="isPlayerSelected">
+        </app-select-player>
+
+        <button class="start-button" type="submit" [disabled]="!readyToStart()">Start</button>
+    </form>
+</div>

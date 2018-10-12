@@ -1,11 +1,22 @@
+@import '../../styles/button';
+@import '../../styles/color';
 
-.footer-button {
-    grid-area: footer;
-    font-size: 2.5rem;
-    background-color: color('accept');
-    justify-content:center;
-    align-content:center;
-    flex-direction:column;
-    height: 100%;
-    width: 100%;
+footer {
+    font-family: Bangers, Arial, Helvetica, sans-serif;
+    display: flex;
+
+        @extend %button;
+        font-size: 2.5rem;
+        background-color: color('accept');
+
+        justify-content:center;
+        align-items:center;
+        align-self:center;
+        vertical-align: middle;
+        flex-direction:column;
+
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+
 }

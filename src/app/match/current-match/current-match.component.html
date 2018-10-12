@@ -1,25 +1,27 @@
-<h1>
-    <span class="team-yellow">
-        {{match.teamA.player1.name}}
-        and
-        {{match.teamA.player2.name}}
-    </span>
-    <span class="vs">VS</span>
-    <span class="team-red">
-        {{match.teamB.player1.name}}
-        and
-        {{match.teamB.player2.name}}
-    </span>
-</h1>
+<div class="match-container">
+    <h1>
+        <span class="team-yellow">
+            {{match.teamA.player1.name}}
+            and
+            {{match.teamA.player2.name}}
+        </span>
+        <span class="vs">VS</span>
+        <span class="team-red">
+            {{match.teamB.player1.name}}
+            and
+            {{match.teamB.player2.name}}
+        </span>
+    </h1>
 
-<h2>Score</h2>
-<form name="current-match" (ngSubmit)="onSubmit()">
-    <input name="teamAScore" type="number" [(ngModel)]="match.teamAScore"/>
-    <span>:</span>
-    <input name="teamBScore" type="number" [(ngModel)]="match.teamBScore"/>
+    <h2>Score</h2>
+    <form name="current-match" (ngSubmit)="onSubmit()">
+        <input name="teamAScore" type="number" [(ngModel)]="match.teamAScore"/>
+        <span>:</span>
+        <input name="teamBScore" type="number" [(ngModel)]="match.teamBScore"/>
 
-    <br />
+        <br />
 
-    <button type="submit">Save</button>
-    <a routerLink="/match/create">Cancel</a>
-</form>
+        <button type="submit">Save</button>
+        <a routerLink="/match/create">Cancel</a>
+    </form>
+</div>

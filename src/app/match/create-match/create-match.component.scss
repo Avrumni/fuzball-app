@@ -1,8 +1,4 @@
-@import '../../../styles/footer-button';
 
-.start-button {
-    @extend %footer-button;
-}
 
 .team-yellow {
 
@@ -10,4 +6,11 @@
 
 .team-red {
 
+}
+
+.create-match-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
