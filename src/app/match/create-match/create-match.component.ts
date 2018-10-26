@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {Player} from '../../player/player';
 import {PlayerService} from '../../player/player.service';
 import {Router} from '@angular/router';
@@ -10,7 +10,10 @@ import {Match} from '../match';
     templateUrl: './create-match.component.html',
     styleUrls: ['./create-match.component.scss']
 })
+@Injectable()
 export class CreateMatchComponent implements OnInit {
+
+    public path: string[] = ['match/current'];
     public players: Player[] = [];
     public match: Match = {
         teamA: {
@@ -57,6 +60,7 @@ export class CreateMatchComponent implements OnInit {
     }
 
     public onSubmit() {
+        console.log('hello')
         this.currentMatchService.set(this.match);
         this.router.navigate(['/match/current']);
     }

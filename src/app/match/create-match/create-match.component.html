@@ -1,7 +1,7 @@
 
 <div class="create-match-container">
     <h1>Create a match</h1>
-    <form name="match" (ngSubmit)="onSubmit()">
+    <form name="match" (ngSubmit)="onSubmit()" id="ngForm" #documentEditForm="ngForm">
         <h2 class="team-yellow">Team Yellow</h2>
         <app-select-player
             [(player)]="match.teamA.player1"
@@ -28,6 +28,9 @@
             [isPlayerSelected]="isPlayerSelected">
         </app-select-player>
 
-        <button class="start-button" type="submit" [disabled]="!readyToStart()">Start</button>
+        <!--<button class="start-button" type="submit" [disabled]="!readyToStart()">Start</button>-->
+
     </form>
+
 </div>
+<button class="footer-button" type="submit" form="ngForm" [disabled]="!readyToStart()">Kick Off!!!</button>

@@ -10,7 +10,7 @@ import {CreateMatchComponent} from './match/create-match/create-match.component'
 import {CurrentMatchComponent} from './match/current-match/current-match.component';
 import {CreatePlayerComponent} from './player/create-player/create-player.component';
 import {HeaderComponent} from './header/header.component';
-import {FooterComponent} from './footer/footer.component';
+import {FooterButtonComponent} from './footer-button/footer-button.component';
 
 import {PlayerService} from './player/player.service';
 import {CurrentMatchService} from './match/current-match/current-match.service';
@@ -34,7 +34,7 @@ const routes: Routes = [
         CurrentMatchComponent,
         CreatePlayerComponent,
         HeaderComponent,
-        FooterComponent,
+        FooterButtonComponent,
         SelectPlayerComponent,
         HistoryComponent
     ],
@@ -48,6 +48,7 @@ const routes: Routes = [
         LeaderBoardService,
         PlayerService,
         CurrentMatchService,
+        CreateMatchComponent,
         MatchService
     ],
     bootstrap: [AppComponent]

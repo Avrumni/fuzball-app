@@ -14,14 +14,12 @@
     </h1>
 
     <h2>Score</h2>
-    <form name="current-match" (ngSubmit)="onSubmit()">
+    <form name="current-match" (ngSubmit)="onSubmit()" id="ngForm" #documentEditForm="ngForm">
         <input name="teamAScore" type="number" [(ngModel)]="match.teamAScore"/>
         <span>:</span>
         <input name="teamBScore" type="number" [(ngModel)]="match.teamBScore"/>
 
         <br />
-
-        <button type="submit">Save</button>
-        <a routerLink="/match/create">Cancel</a>
-    </form>
+       </form>
 </div>
+<button class="footer-button" type="submit" form="ngForm" [disabled]="!readyToStart()">Save</button>
