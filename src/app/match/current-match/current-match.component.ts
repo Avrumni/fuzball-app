@@ -10,7 +10,7 @@ import {Match} from '../match';
 })
 export class CurrentMatchComponent implements OnInit {
     public match: Match;
-    public saving: boolean = false;
+    public saving = false;
 
     constructor(private currentMatchService: CurrentMatchService,
                 private router: Router) {

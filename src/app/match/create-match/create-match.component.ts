@@ -37,6 +37,7 @@ export class CreateMatchComponent implements OnInit {
 
     public ngOnInit() {
         this.playerService.getAll().subscribe((players) => {
+            console.log(players)
             this.players = players;
         }, (e) => {
             alert('Error getting players: ' + e.message);

@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
@@ -18,12 +18,14 @@ import { SelectPlayerComponent } from './player/select-player/select-player.comp
 import {HttpClientModule} from '@angular/common/http';
 import {HistoryComponent} from './history/history.component';
 import {MatchService} from './match/match.service';
+import {UsernameValidator} from './validators/username';
+import {AuthProvider} from './auth/auth';
 
 const routes: Routes = [
     {path: '', component: HistoryComponent},
+    {path: 'addPlayer', component: CreatePlayerComponent},
     {path: 'match/create', component: CreateMatchComponent},
     {path: 'match/current', component: CurrentMatchComponent},
-    {path: 'playerNumber/create', component: CreatePlayerComponent}
 ];
 
 @NgModule({
@@ -40,12 +42,15 @@ const routes: Routes = [
     ],
     imports: [
         BrowserModule,
+        ReactiveFormsModule,
         FormsModule,
         HttpClientModule,
         RouterModule.forRoot(routes)
     ],
     providers: [
         LeaderBoardService,
+        UsernameValidator,
+        AuthProvider,
         PlayerService,
         CurrentMatchService,
         CreateMatchComponent,

@@ -20,6 +20,6 @@ export class HeaderComponent implements OnInit {
         this._location.back();
     }
     addNewPlayer() {
-        console.log("Added new player");
+        this.router.navigate(['addPlayer']);
     }
 }
