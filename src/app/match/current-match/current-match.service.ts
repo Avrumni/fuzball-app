@@ -31,6 +31,7 @@ export class CurrentMatchService {
     }
 
     public save(match: Match): Observable<Match> {
+        console.log(match)
         return Observable.create((observer: Subscriber<Match>) => {
             this.addNewPlayers(match).subscribe(() => {
                 this.httpClient.post<Match>(ApiConstants.MATCH, match).subscribe((savedMatch) => {
@@ -39,6 +40,7 @@ export class CurrentMatchService {
             });
         });
     }
+
 
     private addNewPlayers(match: Match): Observable<Player[]> {
         const observables: Observable<Player>[] = [];

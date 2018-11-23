@@ -12,7 +12,8 @@
             {{match.teamB.player2.name}}
         </span>
     </h1>
-
+    <h2>Time played:</h2>
+    <h2>{{minutes}} : {{seconds}}</h2>
     <h2>Score</h2>
     <form name="current-match" (ngSubmit)="onSubmit()" id="ngForm" #documentEditForm="ngForm">
         <input name="teamAScore" type="number" [(ngModel)]="match.teamAScore"/>

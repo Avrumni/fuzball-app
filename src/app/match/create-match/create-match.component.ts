@@ -26,6 +26,7 @@ export class CreateMatchComponent implements OnInit {
             player2: null
         },
         teamBScore: 0
+
     };
 
     constructor(
@@ -37,11 +38,12 @@ export class CreateMatchComponent implements OnInit {
 
     public ngOnInit() {
         this.playerService.getAll().subscribe((players) => {
-            console.log(players)
+            console.log(players);
             this.players = players;
         }, (e) => {
             alert('Error getting players: ' + e.message);
         });
+
     }
 
     public isPlayerSelected = (player: Player): boolean => {
@@ -51,7 +53,7 @@ export class CreateMatchComponent implements OnInit {
             player === this.match.teamB.player1 ||
             player === this.match.teamB.player2
         );
-    }
+    };
 
     public readyToStart() {
         return (this.match.teamA.player1 !== null &&
@@ -61,7 +63,7 @@ export class CreateMatchComponent implements OnInit {
     }
 
     public onSubmit() {
-        console.log('hello')
+        console.log('hello');
         this.currentMatchService.set(this.match);
         this.router.navigate(['/match/current']);
     }
