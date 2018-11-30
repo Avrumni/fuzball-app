@@ -14,6 +14,7 @@ export class CurrentMatchComponent implements OnInit, OnDestroy {
     public minutes;
     public seconds;
     public timer = new Date().getTime();
+    public distance;
     public interval;
 
     constructor(private currentMatchService: CurrentMatchService,
@@ -21,12 +22,7 @@ export class CurrentMatchComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        setInterval(() => {
-            this.interval = Date.now() - this.timer;
-            this.minutes = Math.floor((this.interval % (1000 * 60 * 60)) / (1000 * 60));
-            const secs = Math.floor((this.interval % (1000 * 60)) / 1000);
-            this.seconds = secs < 10 ? `0${secs}` : secs;
-        }, 100);
+        this.startTimer();
 
         this.match = this.currentMatchService.get();
 
@@ -34,17 +30,33 @@ export class CurrentMatchComponent implements OnInit, OnDestroy {
             this.router.navigate(['/match/create']);
         }
     }
+
     ngOnDestroy() {
-        if(this.interval) {
-            clearInterval(this.interval)
+        if (this.interval) {
+            console.log('yep')
+            clearInterval(this.interval);
         }
     }
 
     onSubmit() {
+        const completedMatch = {
+            ...this.match,
+            timePlayed: this.distance,
+            startTime: this.timer
+        };
         this.saving = true;
-        this.currentMatchService.save(this.match).subscribe(() => {
+        this.currentMatchService.save(completedMatch).subscribe(() => {
             this.router.navigate(['']);
         });
 
+    }
+
+    public startTimer() {
+        this.interval = setInterval(() => {
+            this.distance = Date.now() - this.timer;
+            this.minutes = Math.floor((this.distance % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((this.distance % (1000 * 60)) / 1000);
+            this.seconds = secs < 10 ? `0${secs}` : secs;
+        }, 100);
     }
 }

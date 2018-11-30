@@ -31,9 +31,9 @@ export class CurrentMatchService {
     }
 
     public save(match: Match): Observable<Match> {
-        console.log(match)
+        console.log(match);
         return Observable.create((observer: Subscriber<Match>) => {
-            this.addNewPlayers(match).subscribe(() => {
+            this.saveMatchDetails(match).subscribe(() => {
                 this.httpClient.post<Match>(ApiConstants.MATCH, match).subscribe((savedMatch) => {
                     observer.next(savedMatch);
                 });
@@ -42,7 +42,7 @@ export class CurrentMatchService {
     }
 
 
-    private addNewPlayers(match: Match): Observable<Player[]> {
+    private saveMatchDetails(match: Match): Observable<Player[]> {
         const observables: Observable<Player>[] = [];
 
         if (!match.teamA.player1.id) {
@@ -57,6 +57,9 @@ export class CurrentMatchService {
         if (!match.teamB.player2.id) {
             observables.push(this.savePlayer(match.teamB.player2));
         }
+        if (match.startTime && match.timePlayed) {
+            observables.push(this.saveStatistics(match.startTime, match.timePlayed));
+        }
 
         if (observables.length > 0) {
             return Observable.forkJoin(observables);
@@ -68,8 +71,13 @@ export class CurrentMatchService {
     }
 
     private savePlayer(player: Player): Observable<Player> {
+        console.log('saved player');
         return this.httpClient.post<Player>(ApiConstants.PLAYERS, player).do((updatedPlayer) => {
             player.id = updatedPlayer.id;
         });
+    }
+
+    private saveStatistics(startTime, timePlayed) {
+        return null;
     }
 }
