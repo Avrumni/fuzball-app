@@ -1,0 +1,19 @@
+<section>
+    <div class="team-header">
+        <span class="yellow">Yellow</span><span class="red">Red</span>
+    </div>
+
+    <div class="match" *ngFor="let match of matches">
+        <dl>
+            <dt><em>{{match.teamA.player1.name}}</em> and <em>{{match.teamA.player2.name}}</em></dt>
+            <dd>{{match.teamAScore}}</dd>
+        </dl>
+        <span>vs</span>
+        <dl>
+            <dt><em>{{match.teamB.player1.name}}</em> and <em>{{match.teamB.player2.name}}</em></dt>
+            <dd>{{match.teamBScore}}</dd>
+        </dl>
+    </div>
+
+</section>
+<app-footer-button (click)="routeChange()"></app-footer-button>

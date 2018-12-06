@@ -1,35 +1,36 @@
-<h1>Create a match</h1>
-<form name="match" (ngSubmit)="onSubmit()">
-    <h2>Team A</h2>
-    <label>Player 1</label>
-    <select name="match.teamA.player1" [(ngModel)]="match.teamA.player1">
-        <option *ngFor="let player of players"
-                [disabled]="!playerAvailable(player)"
-                [ngValue]="player">{{player.name}}</option>
-    </select>
 
-    <label>Player 2</label>
-    <select name="match.teamA.player2" [(ngModel)]="match.teamA.player2">
-        <option *ngFor="let player of players"
-                [disabled]="!playerAvailable(player)"
-                [ngValue]="player">{{player.name}}</option>
-    </select>
+<div class="create-match-container">
+    <h1>Create a match</h1>
+    <form name="match" (ngSubmit)="onSubmit()" id="ngForm" #documentEditForm="ngForm">
+        <h2 class="team-yellow">Team Yellow</h2>
+        <app-select-player
+            [(player)]="match.teamA.player1"
+            [players]="players"
+            [isPlayerSelected]="isPlayerSelected">
+        </app-select-player>
 
-    <h2>Team B</h2>
-    <label>Player 1</label>
-    <select name="match.teamB.player1" [(ngModel)]="match.teamB.player1">
-        <option *ngFor="let player of players"
-                [disabled]="!playerAvailable(player)"
-                [ngValue]="player">{{player.name}}</option>
-    </select>
+        <app-select-player
+            [(player)]="match.teamA.player2"
+            [players]="players"
+            [isPlayerSelected]="isPlayerSelected">
+        </app-select-player>
 
-    <label>Player 2</label>
-    <select name="match.teamB.player2" [(ngModel)]="match.teamB.player2">
-        <option *ngFor="let player of players"
-                [disabled]="!playerAvailable(player)"
-                [ngValue]="player">{{player.name}}</option>
-    </select>
+        <h2 class="team-red">Team Red </h2>
+        <app-select-player
+            [(player)]="match.teamB.player1"
+            [players]="players"
+            [isPlayerSelected]="isPlayerSelected">
+        </app-select-player>
 
-    <button type="submit" [disabled]="!readyToStart()">Start</button>
-    <app-create-player></app-create-player>
-</form>
+        <app-select-player
+            [(player)]="match.teamB.player2"
+            [players]="players"
+            [isPlayerSelected]="isPlayerSelected">
+        </app-select-player>
+
+        <!--<button class="start-button" type="submit" [disabled]="!readyToStart()">Start</button>-->
+
+    </form>
+
+</div>
+<button class="footer-button" type="submit" form="ngForm" [disabled]="!readyToStart()">Kick Off!!!</button>

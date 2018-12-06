@@ -1,8 +1,19 @@
-<form name="create-player" (ngSubmit)="onSubmit()">
-    <label>ID</label>
-    <input type="number"/>
 
-    <label>Name</label>
-    <input type="text"/>
-    <button type="submit">Save</button>
+<form [formGroup]="createPlayerForm" #formDir="ngForm" name="create-player" (ngSubmit)="onSubmit(createPlayerForm)">
+
+<h1>ADD A NEW PLAYER</h1>
+<div class="wrapper">
+    <input class="input" placeholder="Please Enter Text" type="text" formControlName="name" name="name">
+    <div
+        class="error"
+        *ngIf="createPlayerForm.get('name').hasError('minlength') && createPlayerForm.get('name').touched">
+        Minimum of 4 characters
+    </div>
+    <div
+        class="error"
+        *ngIf="createPlayerForm.get('name').hasError('usernameInUse')">
+        Name already taken fam
+    </div>
+    <button type="submit" [disabled]="createPlayerForm.get('name').hasError('usernameInUse')">Add new player</button>
+</div>
 </form>

@@ -1,0 +1,17 @@
+@import '../../../styles/button';
+@import '../../../styles/footer';
+
+.match-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-button {
+    @extend %footer
+}
+
+.vs {
+    font-size: 40px;
+}

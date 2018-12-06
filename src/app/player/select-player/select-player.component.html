@@ -1,0 +1,15 @@
+<!--<label>Player {{playerNumber}}</label>-->
+<!--[(ngModel)]="team['player' + playerNumber]"-->
+<div class="select" *ngIf="isPlayerSelected">
+    <select #existingPlayer *ngIf="!newPlayer" [(ngModel)]="player" (change)="onChange()">
+        <option></option>
+        <option *ngFor="let player of players"
+                [disabled]="isPlayerSelected(player)"
+                [ngValue]="player">{{player.name}}
+        </option>
+    </select>
+
+    <input #newPlayerName *ngIf="newPlayer" type="text" [(ngModel)]="player.name" (change)="onChange()"/>
+
+    <!--<button type="button" (click)="toggleCreate()">{{newPlayer ? 'Existing' : 'New'}} player</button>-->
+</div>

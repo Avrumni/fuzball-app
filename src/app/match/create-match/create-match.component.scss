@@ -1,0 +1,21 @@
+@import '../../../styles/button';
+@import '../../../styles/footer';
+
+.team-yellow {
+
+}
+
+.team-red {
+
+}
+
+.create-match-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-button {
+    @extend %footer
+}

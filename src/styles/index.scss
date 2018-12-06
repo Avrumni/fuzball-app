@@ -1,0 +1,38 @@
+@import 'color';
+@import 'reset';
+@import 'button';
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+
+html {
+    font-size: 14px;
+    color: color('primary');
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    background: color('background');
+    position: relative;
+}
+
+h1 {
+    font-family: Bangers, Arial, Helvetica, sans-serif;
+    font-size: 26px;
+}
+
+h2 {
+    font-family: Bangers, Arial, Helvetica, sans-serif;
+    margin: 1rem 0 0.3rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+button {
+    @extend %button;
+}
+
+main {
+    height: 100%;
+}

@@ -1,0 +1,62 @@
+@import '../../styles/color';
+
+.match {
+    border-bottom: 1px solid color('subtle');
+    text-align: center;
+    display: flex;
+    align-items: stretch;
+    padding: .5rem .3rem;
+
+    dl {
+        flex: 1 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        dt {
+            margin-bottom: .5rem;
+        }
+
+        dd {
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+    }
+
+    > span {
+        width: 50px;
+        align-self: center;
+    }
+
+    em {
+        font-weight: bold;
+    }
+}
+
+
+.team-header {
+    display: flex;
+    font-family: Bangers, Arial, Helvetica, sans-serif;
+
+    .yellow {
+        background-color: #ffe062;
+        font-size: 2em;
+        flex: 1;
+        padding: .5rem .3rem;
+        text-align: left;
+
+    }
+    .red {
+        background-color: #f6546a;
+        flex: 1;
+        font-size: 2em;
+        padding: .5rem .3rem;
+        text-align: right;
+
+    }
+ }
+
+.history {
+height: 100%;
+
+}
