@@ -20,6 +20,7 @@ import {HistoryComponent} from './history/history.component';
 import {MatchService} from './match/match.service';
 import {UsernameValidator} from './validators/username';
 import {AuthProvider} from './auth/auth';
+import {DataService} from './common/services/data.service';
 
 const routes: Routes = [
     {path: '', component: HistoryComponent},
@@ -48,6 +49,7 @@ const routes: Routes = [
         RouterModule.forRoot(routes)
     ],
     providers: [
+        DataService,
         LeaderBoardService,
         UsernameValidator,
         AuthProvider,
