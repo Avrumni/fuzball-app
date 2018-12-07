@@ -31,12 +31,11 @@ export class CurrentMatchService {
     }
 
     public save(match: Match): Observable<Match> {
-        console.log(match);
         return Observable.create((observer: Subscriber<Match>) => {
             this.saveMatchDetails(match).subscribe(() => {
                 this.httpClient.post<Match>(ApiConstants.MATCH, match).subscribe((savedMatch) => {
                     observer.next(savedMatch);
-                });
+                }, err => console.log(err));
             });
         });
     }
@@ -57,9 +56,9 @@ export class CurrentMatchService {
         if (!match.teamB.player2.id) {
             observables.push(this.savePlayer(match.teamB.player2));
         }
-        if (match.startTime && match.timePlayed) {
-            observables.push(this.saveStatistics(match.startTime, match.timePlayed));
-        }
+        // if (match.startTime && match.timePlayed) {
+        //     observables.push(this.saveStatistics(match.startTime, match.timePlayed));
+        // }
 
         if (observables.length > 0) {
             return Observable.forkJoin(observables);

@@ -1,19 +1,22 @@
-
-<form [formGroup]="createPlayerForm" #formDir="ngForm" name="create-player" (ngSubmit)="onSubmit(createPlayerForm)">
-
-<h1>ADD A NEW PLAYER</h1>
-<div class="wrapper">
-    <input class="input" placeholder="Please Enter Text" type="text" formControlName="name" name="name">
-    <div
-        class="error"
-        *ngIf="createPlayerForm.get('name').hasError('minlength') && createPlayerForm.get('name').touched">
-        Minimum of 4 characters
-    </div>
-    <div
-        class="error"
-        *ngIf="createPlayerForm.get('name').hasError('usernameInUse')">
-        Name already taken fam
-    </div>
-    <button type="submit" [disabled]="createPlayerForm.get('name').hasError('usernameInUse')">Add new player</button>
+<div class="forms">
+    <form class="form" [formGroup]="createPlayerForm" #formDir="ngForm" name="create-player" (ngSubmit)="onSubmit(createPlayerForm)">
+        <video class="avatar" id="player" autoplay></video>
+        <canvas id="canvas" width=320 height=240></canvas>
+        <h1 class="form-title">Who are you?</h1>
+        <div class="form-group">
+            <input type="text" placeholder=" " class="form-input" type="text" formControlName="name" name="name">
+            <label for="" class="form-label">Name</label>
+            <div
+                class="error"
+                *ngIf="createPlayerForm.get('name').hasError('minlength') && createPlayerForm.get('name').touched">
+                Minimum of 4 characters
+            </div>
+            <div
+                class="error"
+                *ngIf="createPlayerForm.get('name').hasError('usernameInUse')">
+                Name already taken fam
+            </div>
+        </div>
+        <button class="form-button" type="submit" [disabled]="createPlayerForm.get('name').hasError('usernameInUse')">Add new player</button>
+    </form>
 </div>
-</form>

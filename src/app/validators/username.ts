@@ -24,6 +24,7 @@ export class UsernameValidator {
                 }
             }, (err) => {
                 resolve(null);
+                console.log(err)
             });
 
         });

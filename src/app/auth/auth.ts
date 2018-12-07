@@ -19,7 +19,7 @@ export class AuthProvider {
     }
 
     private handleError(error: Response) {
-        console.error(error);
+        console.log(error);
         return Observable.throw(' error');
     }
 

@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PlayerService} from '../player.service';
 import {Player} from '../player';
-import {ObserveOnMessage} from 'rxjs/operators/observeOn';
-import {Observable} from 'rxjs/Observable';
 import {UsernameValidator} from '../../validators/username';
+import {ApiConstants} from '../../common/api.constants';
 
 @Component({
     selector: 'app-create-player',
@@ -14,7 +13,7 @@ import {UsernameValidator} from '../../validators/username';
 export class CreatePlayerComponent implements OnInit {
     public createPlayerForm: FormGroup;
 
-    constructor(private fb: FormBuilder, private playerService: PlayerService, private usernameValidator: UsernameValidator ) {
+    constructor(private fb: FormBuilder, private playerService: PlayerService, private usernameValidator: UsernameValidator) {
     }
 
     ngOnInit() {
@@ -27,12 +26,31 @@ export class CreatePlayerComponent implements OnInit {
                 ],
                 this.usernameValidator.checkUsername.bind(this.usernameValidator)]
         });
+
+        const player = document.getElementById('player');
+
+        const constraints = {
+            video: true,
+        };
+
+        navigator.mediaDevices.getUserMedia(constraints)
+            .then((stream) => {
+                (<HTMLVideoElement>player).srcObject = stream;
+            });
     }
 
 
     onSubmit({value, valid}: { value: Player, valid: boolean }) {
         console.log(value, valid);
+        // Save snapshot of current video stream to a hidden canvas
+        const canvas = document.getElementById('canvas');
+        const image = (<HTMLCanvasElement>canvas).getContext('2d');
+        const player = document.getElementById('player');
+        image.drawImage((<HTMLVideoElement>player), 0, 0, (<HTMLCanvasElement>canvas).width, (<HTMLCanvasElement>canvas).height);
+        const dataURL = (<HTMLCanvasElement>canvas).toDataURL();
+        // console.log(dataURL)
         if (valid) {
+            this.playerService.storeInS3Bucket(dataURL);
             this.playerService.savePlayer({name: this.createPlayerForm.value.name})
                 .subscribe(data => console.log('player city', data),
                     error => console.log('something broke', error));

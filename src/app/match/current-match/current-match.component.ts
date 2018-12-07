@@ -45,7 +45,7 @@ export class CurrentMatchComponent implements OnInit, OnDestroy {
             startTime: this.timer
         };
         this.saving = true;
-        this.currentMatchService.save(completedMatch).subscribe(() => {
+        this.currentMatchService.save(completedMatch).subscribe((success) => {
             this.router.navigate(['']);
         });
 
