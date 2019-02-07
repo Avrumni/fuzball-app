@@ -48,9 +48,8 @@ export class CreatePlayerComponent implements OnInit {
         const player = document.getElementById('player');
         image.drawImage((<HTMLVideoElement>player), 0, 0, (<HTMLCanvasElement>canvas).width, (<HTMLCanvasElement>canvas).height);
         const dataURL = (<HTMLCanvasElement>canvas).toDataURL();
-        // console.log(dataURL)
         if (valid) {
-            this.playerService.storeInS3Bucket(dataURL);
+            // this.playerService.storeInS3Bucket(dataURL);
             this.playerService.savePlayer({name: this.createPlayerForm.value.name})
                 .subscribe(data => console.log('player city', data),
                     error => console.log('something broke', error));
