@@ -6,12 +6,12 @@
     <div class="match" *ngFor="let match of matches">
         <dl>
             <dt><em>{{match.teamA.player1.name}}</em> and <em>{{match.teamA.player2.name}}</em></dt>
-            <dd>{{match.teamAScore}}</dd>
+            <dd>{{match.teamAScore ? match.teamAScore : 0}}</dd>
         </dl>
         <span>vs</span>
         <dl>
             <dt><em>{{match.teamB.player1.name}}</em> and <em>{{match.teamB.player2.name}}</em></dt>
-            <dd>{{match.teamBScore}}</dd>
+            <dd>{{match.teamBScore ? match.teamBScore : 0}}</dd>
         </dl>
     </div>
 

@@ -1,5 +1,4 @@
 import {Team} from '../team/team';
-import {Time} from '@angular/common';
 
 export interface Match {
     teamA: Team;
