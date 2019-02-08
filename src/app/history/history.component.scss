@@ -1,5 +1,9 @@
 @import '../../styles/color';
 
+.list-view {
+    padding-bottom: 64px;
+}
+
 .match {
     border-bottom: 1px solid color('subtle');
     text-align: center;
@@ -55,8 +59,3 @@
 
     }
  }
-
-.history {
-height: 100%;
-
-}

@@ -1,15 +1,9 @@
-import {Component, Injectable, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {CurrentMatchService} from '../match/current-match/current-match.service';
-import {injectTemplateRef} from '@angular/core/src/render3';
-import {CreateMatchComponent} from '../match/create-match/create-match.component';
-
-import {PlayerService} from '../player/player.service';
-import {Match} from '../match/match';
 
 
 @Component({
-    selector: 'app-footer-button',
+    selector: 'footer-button-component',
     templateUrl: './footer-button.component.html',
     styleUrls: ['./footer-button.component.scss']
 })
