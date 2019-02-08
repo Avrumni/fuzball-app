@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PlayerService} from '../player.service';
 import {Player} from '../player';
 import {UsernameValidator} from '../../validators/username';
-import {ApiConstants} from '../../common/api.constants';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-create-player',
@@ -13,7 +13,11 @@ import {ApiConstants} from '../../common/api.constants';
 export class CreatePlayerComponent implements OnInit {
     public createPlayerForm: FormGroup;
 
-    constructor(private fb: FormBuilder, private playerService: PlayerService, private usernameValidator: UsernameValidator) {
+    constructor(
+        private fb: FormBuilder,
+        private playerService: PlayerService,
+        private usernameValidator: UsernameValidator,
+        private router: Router) {
     }
 
     ngOnInit() {
@@ -51,8 +55,7 @@ export class CreatePlayerComponent implements OnInit {
         if (valid) {
             // this.playerService.storeInS3Bucket(dataURL);
             this.playerService.savePlayer({name: this.createPlayerForm.value.name})
-                .subscribe(data => console.log('player city', data),
-                    error => console.log('something broke', error));
+                .subscribe(data => this.onSuccess(data.name));
 
         }
     }
@@ -62,4 +65,9 @@ export class CreatePlayerComponent implements OnInit {
     //     this.playerService.checkPlayerNotTaken(control.value);
     //     return this.playerService.checkPlayerNotTaken(control.value);
     // };
+
+    onSuccess(data) {
+        alert(`Player ${data} saved successfully!`);
+        this.router.navigate(['/']);
+    }
 }

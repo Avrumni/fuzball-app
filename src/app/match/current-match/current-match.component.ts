@@ -46,7 +46,7 @@ export class CurrentMatchComponent implements OnInit, OnDestroy {
         };
         this.saving = true;
         this.currentMatchService.save(completedMatch).subscribe((success) => {
-            this.router.navigate(['']);
+            this.onSuccess();
         });
 
     }
@@ -58,5 +58,10 @@ export class CurrentMatchComponent implements OnInit, OnDestroy {
             const secs = Math.floor((this.distance % (1000 * 60)) / 1000);
             this.seconds = secs < 10 ? `0${secs}` : secs;
         }, 100);
+    }
+
+    onSuccess() {
+        alert('Game recorded!')
+        this.router.navigate(['/']);
     }
 }

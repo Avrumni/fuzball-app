@@ -5,14 +5,20 @@ select {
     appearance: none;
     outline: 0;
     box-shadow: none;
+    font-family: 'Bangers';
+    font-size: 1.5rem;
+    text-align-last:center;
+
+
 }
 /* Custom Select */
 .select {
     position: relative;
     display: block;
-    width: 20em;
-    height: 3em;
-    line-height: 3;
+    width: 100%;
+    min-width: 20rem;
+    height: 4rem;
+    line-height: 3.9rem;
     overflow: hidden;
     border-radius: .25em;
 }
@@ -31,3 +37,4 @@ select {
     padding: 0 1em;
     pointer-events: none;
 }
+
