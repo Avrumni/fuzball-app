@@ -10,11 +10,17 @@
     flex-direction: column;
 }
 
+
+.timer {
+    padding: 1rem;
+}
+
 form {
 
     width: 100%;
-    height: 100%;
+    height: calc(100%);
     display: grid;
+    grid-template-columns: 1fr 1fr;
     @media (max-width: 767px) {
         height: calc(100vh - 50px);
     }
@@ -38,7 +44,6 @@ form {
     @media (max-width: 767px) {
         grid-row: 1;
         grid-column: 1;
-        height: calc(100% - 32px);
     }
 }
 
@@ -53,7 +58,6 @@ form {
     @media (max-width: 767px) {
         grid-row: 2;
         grid-column: 1;
-        height: calc(100% - 32px);
 
     }
 }
