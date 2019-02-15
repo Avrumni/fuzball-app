@@ -1,7 +1,9 @@
 <div class="forms">
     <form class="form" [formGroup]="createPlayerForm" #formDir="ngForm" name="create-player" (ngSubmit)="onSubmit(createPlayerForm)">
+        <div class="spin-container">
         <video class="avatar" id="player" autoplay></video>
         <canvas id="canvas" width=320 height=240></canvas>
+        </div>
         <h1 class="form-title">Who are you?</h1>
         <div class="form-group">
             <input type="text" placeholder=" " class="form-input" type="text" formControlName="name" name="name">

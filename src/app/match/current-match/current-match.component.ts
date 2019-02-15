@@ -17,6 +17,7 @@ export class CurrentMatchComponent implements OnInit, OnDestroy {
     public distance;
     public interval;
 
+
     constructor(private currentMatchService: CurrentMatchService,
                 private router: Router) {
     }
@@ -49,6 +50,13 @@ export class CurrentMatchComponent implements OnInit, OnDestroy {
             this.onSuccess();
         });
 
+    }
+
+    public increment(e) {
+        console.log(e)
+        if (this.match.teamAScore < 11) {
+            this.match.teamAScore++;
+        }
     }
 
     public startTimer() {

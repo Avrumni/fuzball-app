@@ -2,6 +2,14 @@
 @import '../../../styles/footer';
 
 
+.create-match-container {
+    display: flex;
+    height: calc(100vh - 50px);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 form {
 
     width: 100%;
@@ -16,6 +24,7 @@ form {
     font-size: 2rem;
     margin: 20px;
 }
+
 .team-yellow {
     background-color: #ffe062;
 
@@ -23,7 +32,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-        grid-column: 1;
+    grid-column: 1;
 
     @media (max-width: 767px) {
         grid-row: 1;
@@ -39,21 +48,13 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-        grid-column: 2;
+    grid-column: 2;
     @media (max-width: 767px) {
         grid-row: 2;
         grid-column: 1;
 
 
     }
-}
-
-.create-match-container {
-    display: flex;
-    height: calc(100vh - 50px);
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 }
 
 .footer-button {
