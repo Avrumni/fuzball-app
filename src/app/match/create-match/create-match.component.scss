@@ -16,6 +16,7 @@ form {
     height: 100%;
     display: grid;
     @media (max-width: 767px) {
+        height: calc(100vh - 50px);
     }
 }
 
@@ -37,7 +38,7 @@ form {
     @media (max-width: 767px) {
         grid-row: 1;
         grid-column: 1;
-
+        height: calc(100% - 32px);
     }
 }
 
@@ -52,7 +53,7 @@ form {
     @media (max-width: 767px) {
         grid-row: 2;
         grid-column: 1;
-
+        height: calc(100% - 32px);
 
     }
 }

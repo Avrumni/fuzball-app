@@ -34,7 +34,7 @@ export class CurrentMatchComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         if (this.interval) {
-            console.log('yep')
+            console.log('yep');
             clearInterval(this.interval);
         }
     }
@@ -52,10 +52,15 @@ export class CurrentMatchComponent implements OnInit, OnDestroy {
 
     }
 
-    public increment(e) {
-        console.log(e)
-        if (this.match.teamAScore < 11) {
+    public incrementA() {
+        if (this.match.teamAScore < 10) {
             this.match.teamAScore++;
+        }
+    }
+
+    public incrementB() {
+        if (this.match.teamBScore < 10) {
+            this.match.teamBScore++;
         }
     }
 
@@ -69,7 +74,7 @@ export class CurrentMatchComponent implements OnInit, OnDestroy {
     }
 
     onSuccess() {
-        alert('Game recorded!')
+        alert('Game recorded!');
         this.router.navigate(['/']);
     }
 }

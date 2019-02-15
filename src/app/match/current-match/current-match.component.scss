@@ -1,6 +1,7 @@
 @import '../../../styles/button';
 @import '../../../styles/footer';
 
+
 .match-container {
     display: flex;
     align-items: center;
@@ -12,8 +13,8 @@
     @extend %footer
 }
 
-.vs {
-    font-size: 40px;
+.timer {
+    padding: 1rem;
 }
 
 .current-match-container {
@@ -29,17 +30,24 @@ form {
     height: 100%;
     display: grid;
     @media (max-width: 767px) {
+        height: calc(100vh - 50px);
     }
+}
+
+.score {
+    font-family: 'Bangers';
+    font-size: 5rem;
+    text-align-last: center;
 }
 
 .team-yellow {
     background-color: #ffe062;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     grid-column: 1;
+    cursor: pointer;
 
     @media (max-width: 767px) {
         grid-row: 1;
@@ -48,9 +56,18 @@ form {
     }
 }
 
+.team-yellow:hover {
+    background-color: #D3C149
+}
+.team-yellow:active {
+    background-color: #D3C149;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
 .team-red {
     background-color: #f6546a;
-
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,4 +79,27 @@ form {
 
 
     }
+}
+.team-red:hover {
+    background-color: #BA4D56
+}
+.team-red:active {
+    background-color: #BA4D56;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 5px solid black;
 }

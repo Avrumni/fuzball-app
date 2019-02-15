@@ -1,28 +1,29 @@
 <div class="current-match-container">
-    <h2>Time played:</h2>
-    <h2>{{minutes}} : {{seconds}}</h2>
+    <h1 class="timer">{{minutes}} : {{seconds}}</h1>
     <form name="current-match" (ngSubmit)="onSubmit()" id="ngForm" #documentEditForm="ngForm">
-        <div class="team-yellow">
-            <span>
-            {{match.teamA.player1.name}}
+        <div class="team-yellow" (click)="incrementA()">
+            <h1>
+                {{match.teamA.player1.name}}
                 and
                 {{match.teamA.player2.name}}
-        </span>
-        <input name="teamAScore" min="0" max="10" maxlength="2" type="number" pattern="^(10|[0-9])"
-               [(ngModel)]="match.teamAScore"/>
-        <button type="button" (click)="increment()">+</button>
+            </h1>
+            <br/>
+            <input class="score" name="teamAScore" min="0" max="10" maxlength="2" type="number" pattern="^(10|[0-9])"
+                   [(ngModel)]="match.teamAScore"/>
         </div>
 
-        <div class="team-red">
-            <span>
-            {{match.teamB.player1.name}}
+        <div class="team-red" (click)="incrementB()">
+            <h1>
+                {{match.teamB.player1.name}}
                 and
                 {{match.teamB.player2.name}}
-        </span>
-        <input name="teamBScore" min="0" max="10" maxlength="2" type="number" pattern="^(10|[0-9])"
-               [(ngModel)]="match.teamBScore"/>
+            </h1>
+            <br/>
 
+            <input class="score" name="teamBScore" min="0" max="10" maxlength="2" type="number" pattern="^(10|[0-9])"
+                   [(ngModel)]="match.teamBScore"/>
         </div>
+
     </form>
 </div>
 <button class="footer-button" type="submit" form="ngForm">Save</button>
